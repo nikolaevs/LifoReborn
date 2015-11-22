@@ -7,7 +7,7 @@ public class Main {
 
         Stack s = new Stack(10);
 
-        s.push("a");
+        s.push(3);
         s.push(2);
         s.push(1);
         s.push("Hello World!");
