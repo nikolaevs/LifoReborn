@@ -1,10 +1,11 @@
 /**
  * Created by Borges on 15.11.2015.
  */
-public class Stack {
+public class Stack <T> {
     private Object[] arr;
     private int size;
     private int position;
+
 
     public Stack(int size){
         this.position = 0;
@@ -12,7 +13,7 @@ public class Stack {
         this.arr = new Object[size];
     }
 
-    public void push(Object o){
+    public void push(T o){
         if (position >= size) {
             System.out.println("Stack is full");
             return;
