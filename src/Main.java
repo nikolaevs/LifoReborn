@@ -15,6 +15,7 @@ public class Main {
         s.printList();
         System.out.println();
         System.out.println(s.pop());
+        System.out.println(s.pop());
         System.out.println();
         System.out.println(s.contains(2));
         System.out.println(s.contains(2));
