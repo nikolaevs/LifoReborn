@@ -1,37 +1,59 @@
 /**
  * Created by Borges on 15.11.2015.
  */
-public class Stack <T> {
-    private Object[] arr;
-    private int size;
-    private int position;
+class StackElement<E> {
+    StackElement  <E> next;
+    E data;
+}
 
+class Stack<E> {
+    private StackElement  <E> head;
+    private StackElement  <E> tail;
 
-    public Stack(int size){
-        this.position = 0;
-        this.size = size;
-        this.arr = new Object[size];
-    }
+    void push(E data)
+    {
+        StackElement <E> a = new StackElement <E>();
+        a.data = data;
 
-    public void push(T o){
-        if (position >= size) {
-            System.out.println("Stack is full");
-            return;
+        if(head == null)
+        {
+            head = a;
+            tail = a;
         }
-        arr[position++] = o;
+        else {
+            a.next = head;
+            head = a;
+        }
     }
 
-    public Object pop(){
-        if (position == 0){
-            System.out.println("Stack is empty");
+    public E pop(){
+        StackElement <E> t = head;
+        if (t != null){
+            E a = t.data;
+            t = t.next;
+            return (a);
+        }
+        else{
             return null;
         }
-        return arr[--position];
     }
 
-    public void printStack(){
-        for(int i = 0; i < position;i++){
-            System.out.print(arr[i] + " ");
+    public boolean contains(E data){
+        StackElement <E> t = head;
+        boolean e = true;
+        if (!t.equals(data)){
+
+        }
+        return (e);
+    }
+
+    void printList()
+    {
+        StackElement t = head;
+        while (t != null)
+        {
+            System.out.print(t.data + " ");
+            t = t.next;
         }
     }
 }
