@@ -49,16 +49,18 @@ class Stack<E> {
         }
     }
 
-    /*public boolean Contains(E data){
-        boolean a = false;
-        while (!(tail.equals(head))) {
-            if (data.equals(data)) {
-                a = true;
+    public E Contains(E data){
+        StackElement <E> t = head;
+        while (!t.equals(tail)) {
+            if (t.equals(data)) {
+                return data;
             }
-            head = head.next;
+            else{
+                t = t.next;
+            }
         }
-        return (a);
-    }*/
+        return (null);
+    }
 
     void printList() {
         StackElement t = head;

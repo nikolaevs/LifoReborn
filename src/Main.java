@@ -14,15 +14,15 @@ public class Main {
 
         s.printList();
         System.out.println();
-        System.out.println(s.Pop());
-        System.out.println(s.Pop());
-        System.out.println(s.Pop());
-        System.out.println(s.Pop());
-        System.out.println(s.Pop());
-        /*System.out.println();
         System.out.println(s.Contains(2));
         System.out.println(s.Contains(2));
         System.out.println(s.Contains(1));
-        System.out.println(s.Contains(1000000));*/
+        System.out.println(s.Contains(1000000));
+        System.out.println();
+        System.out.println(s.Pop());
+        System.out.println(s.Pop());
+        System.out.println(s.Pop());
+        System.out.println(s.Pop());
+        System.out.println(s.Pop());
     }
 }
