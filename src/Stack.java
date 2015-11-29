@@ -10,11 +10,9 @@ class Stack<E> {
     private StackElement  <E> head;
     private StackElement  <E> tail;
 
-    void push(E data)
-    {
+    void FrontPush(E data) {
         StackElement <E> a = new StackElement <E>();
         a.data = data;
-
         if(head == null)
         {
             head = a;
@@ -26,11 +24,24 @@ class Stack<E> {
         }
     }
 
-    public E pop(){
+    void BackPush(E data) {
+        StackElement <E> a = new StackElement <E>();
+        a.data = data;
+        if (tail == null)
+        {
+            head = a;
+            tail = a;
+        } else {
+            tail.next = a;
+            tail = a;
+        }
+    }
+
+    public E Pop(){
         StackElement <E> t = head;
         if (t != null){
             E a = t.data;
-            t = t.next;
+            head = t.next;
             return (a);
         }
         else{
@@ -38,17 +49,18 @@ class Stack<E> {
         }
     }
 
-    public boolean contains(E data){
-        StackElement <E> t = head;
-        boolean e = true;
-        if (!t.equals(data)){
-
+    /*public boolean Contains(E data){
+        boolean a = false;
+        while (!(tail.equals(head))) {
+            if (data.equals(data)) {
+                a = true;
+            }
+            head = head.next;
         }
-        return (e);
-    }
+        return (a);
+    }*/
 
-    void printList()
-    {
+    void printList() {
         StackElement t = head;
         while (t != null)
         {
